@@ -53,11 +53,11 @@ jobs:
     runs-on: windows-latest
 
     env:
-      Solution_Name: AssistantAi.sln
+      Solution_Name: KanBanWPF.sln
       # Update the paths below if you have corresponding projects
-      # Test_Project_Path: AssistantAi.Tests\AssistantAi.Tests.csproj 
+      # Test_Project_Path: KanBanWPF.Tests\KanBanWPF.Tests.csproj 
       # Wap_Project_Directory: AssistantAi.Package
-      # Wap_Project_Path: AssistantAi.Package\AssistantAi.Package.wapproj
+      # Wap_Project_Path: KanBanWPF.Package\KanBanWPF.Package.wapproj
 
     steps:
     - name: Checkout
@@ -98,4 +98,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Build Artifacts
-        path: AssistantAi\bin\${{ matrix.configuration }}
+        path: KanBanWPF\bin\${{ matrix.configuration }}
