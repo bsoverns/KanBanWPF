@@ -50,17 +50,26 @@ namespace KanBanWPF
 
         // You can add more properties for other elements
 
+        private string _assignedTo = "Unassigned";
+        public string AssignedTo
+        {
+            get => _assignedTo;
+            set
+            {
+                _assignedTo = value;
+                AssignedToTextBlock.Text = "Assigned To: " + value;
+            }
+        }
+
         private void UserControl_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            // Capture the start point
             dragStartPoint = e.GetPosition(this);
         }
 
         private void UserControl_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed && dragStartPoint.HasValue)
-            {
-                // Calculate the offset
+            {                
                 Point mousePos = e.GetPosition(this);
                 Vector diff = dragStartPoint.Value - mousePos;
 

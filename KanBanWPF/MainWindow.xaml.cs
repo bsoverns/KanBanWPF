@@ -21,13 +21,14 @@ namespace KanBanWPF
             InitializeComponent();
         }
 
-        //Create a new card and add it to the column "Not Started"
         private void AddCardButton_Click(object sender, RoutedEventArgs e)
         {
             KanbanCard card = new KanbanCard();
             card.Tag = Guid.NewGuid();
-            card.Title = "New Task";
-            card.Description = "Description of the task";
+            card.Title = "Orlando Health VV";
+            card.Description = "Test the Orlando Health standard Virtual Visit Process";
+            card.AssignedTo = "John Doe"; // This updates the TextBlock
+
             //card.IsActive = true;           
             NotStartedColumn.Children.Add(card);
         }
