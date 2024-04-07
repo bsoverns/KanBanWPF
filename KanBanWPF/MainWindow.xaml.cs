@@ -25,11 +25,23 @@ namespace KanBanWPF
         private void AddCardButton_Click(object sender, RoutedEventArgs e)
         {
             KanbanCard card = new KanbanCard();
+            card.Tag = Guid.NewGuid();
             card.Title = "New Task";
             card.Description = "Description of the task";
+            //card.IsActive = true;           
             NotStartedColumn.Children.Add(card);
         }
 
+        private void Column_Drop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetData(typeof(KanbanCard)) is KanbanCard card)
+            {
+                Panel? currentParent = card.Parent as Panel;
+                currentParent?.Children.Remove(card);
 
+                StackPanel? targetColumn = sender as StackPanel;
+                targetColumn?.Children.Add(card);
+            }
+        }
     }
 }
