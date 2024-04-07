@@ -36,19 +36,11 @@ namespace KanBanWPF
         {
             if (e.Data.GetData(typeof(KanbanCard)) is KanbanCard card)
             {
-                // Assuming the source is a Panel, you might need to remove the card from its current parent
-                (card.Parent as Panel)?.Children.Remove(card);
+                Panel? currentParent = card.Parent as Panel;
+                currentParent?.Children.Remove(card);
 
-                // Add the card to the target column
-                StackPanel targetColumn = sender as StackPanel;
-                targetColumn.Children.Add(card);
-
-                // Optionally, perform actions based on the target column's name
-                // For example:
-                if (targetColumn.Name == "InProgressColumn")
-                {
-                    // Code to update the task status to "In Progress"
-                }
+                StackPanel? targetColumn = sender as StackPanel;
+                targetColumn?.Children.Add(card);
             }
         }
     }
