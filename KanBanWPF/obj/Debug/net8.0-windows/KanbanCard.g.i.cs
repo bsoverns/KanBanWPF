@@ -76,7 +76,7 @@ namespace KanBanWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KanBanWPF;component/kanbancard.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KanBanWPF;V1.0.0.0;component/kanbancard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\KanbanCard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

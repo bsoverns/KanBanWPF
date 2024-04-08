@@ -20,7 +20,9 @@ namespace KanBanWPF
     /// </summary>
     public partial class KanbanCard : UserControl
     {
+        private string _assignedTo = "Unassigned";
         private Point? dragStartPoint = null;
+        //Create two properties for the card; start time
 
         public KanbanCard()
         {
@@ -50,7 +52,6 @@ namespace KanBanWPF
 
         // You can add more properties for other elements
 
-        private string _assignedTo = "Unassigned";
         public string AssignedTo
         {
             get => _assignedTo;
